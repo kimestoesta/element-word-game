@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Table Word Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <h1>Periodic Table Word Game</h1>
+            <div class="instructions">
+                <h2>How to Play:</h2>
+                <ul>
+                    <li>Spell words using chemical symbols from the periodic table</li>
+                    <li>Example: "BACON" = Ba (Barium) + Co (Cobalt) + N (Nitrogen)</li>
+                    <li>Score points based on atomic numbers</li>
+                    <li>You have 90 seconds to score as many points as possible!</li>
+                </ul>
+            </div>
+            <button id="start-button" class="btn">Start Game</button>
+            <button id="view-leaderboard-button" class="btn">View Leaderboard</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <div class="game-header">
+                <div class="game-header-content">
+                    <button id="back-to-start-ingame">← Back</button>
+                    <div id="timer">1:30</div>
+                    <div id="score">Score: 0</div>
+                </div>
+            </div>
+            
+            <div class="game-content">
+                <!-- Word Input Section -->
+                <div class="word-input-section">
+                    <div class="game-input">
+                        <input type="text" id="word-input" placeholder="Enter a word">
+                        <button id="submit-word" class="btn">Submit</button>
+                    </div>
+                    <div id="word-breakdown"></div>
+                </div>
+                
+                <!-- Periodic Table Section -->
+                <div class="periodic-table-section">
+                    <h3>Click elements to build words</h3>
+                    <div class="periodic-table-container">
+                        <div id="periodic-table" class="periodic-table"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- End Screen -->
+        <div id="end-screen" class="screen">
+            <h2>Game Over!</h2>
+            <div id="final-score"></div>
+            <button id="play-again" class="btn">Play Again</button>
+            <button id="end-leaderboard" class="btn">View Leaderboard</button>
+        </div>
+
+        <!-- Leaderboard Screen -->
+        <div id="leaderboard-screen" class="screen">
+            <div class="ticker-wrap">
+                <div class="ticker">
+                    <div class="ticker-item">LEADERBOARD</div>
+                    <div class="ticker-accent">WOW</div>
+                    <div class="ticker-item">LEADERBOARD</div>
+                    <div class="ticker-accent">OMG</div>
+                    <div class="ticker-item">LEADERBOARD</div>
+                    <div class="ticker-accent">WOW</div>
+                    <div class="ticker-item">LEADERBOARD</div>
+                    <div class="ticker-accent">OMG</div>
+                </div>
+                <div class="ticker ticker-2">
+                    <div class="ticker-item">LEADERBOARD</div>
+                    <div class="ticker-accent">WOW</div>
+                    <div class="ticker-item">LEADERBOARD</div>
+                    <div class="ticker-accent">OMG</div>
+                    <div class="ticker-item">LEADERBOARD</div>
+                    <div class="ticker-accent">WOW</div>
+                    <div class="ticker-item">LEADERBOARD</div>
+                    <div class="ticker-accent">OMG</div>
+                </div>
+            </div>
+            <div class="leaderboard-container">
+                <div id="leaderboard-entries">
+                    <!-- Entries will be dynamically populated -->
+                </div>
+                <button id="back-to-start" class="btn">Back to Start</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/dictionary.js"></script>
+    <script src="js/periodicTable.js"></script>
+    <script src="js/gameLogic.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Loading Message -->
+    <div id="loading-message" style="display: none;">
+        Loading dictionary...
+    </div>
+</body>
+</html> 
