@@ -13,7 +13,7 @@ h1, h2, h3 {
 }
 
 #game-container {
-    width: 85%;
+    width: 100%;
     max-width: 1800px;
     margin: 0 auto;
     background-color: transparent;
@@ -522,31 +522,135 @@ h3 {
 }
 
 @media (max-width: 768px) {
-    .game-content {
-        flex-direction: column;
+    #game-container {
+        width: 100%;
+        padding: 0;
     }
-    
+
+    #start-screen, #leaderboard-screen {
+        width: 90%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin: 20px 0;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .game-header-content {
+        width: 95%;
+        grid-template-columns: auto 1fr auto;
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    #timer {
+        font-size: 1.5rem;
+    }
+
+    #score {
+        font-size: 1rem;
+    }
+
+    .word-input-section {
+        padding: 0 15px;
+    }
+
+    .game-input {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #word-input {
+        width: 100%;
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+
+    #submit-word {
+        width: 100%;
+        padding: 15px;
+    }
+
     .periodic-table {
-        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        transform: scale(0.7);
+        transform-origin: top center;
+        padding: 5px;
+    }
+
+    .element-card {
+        width: 40px;
+        height: 40px;
+    }
+
+    .element-symbol {
+        font-size: 16px;
+    }
+
+    .element-number {
+        font-size: 8px;
+    }
+
+    .element-name {
+        font-size: 6px;
+    }
+
+    .leaderboard-entry {
+        grid-template-columns: 40px 40px auto 100px;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .player-name {
+        font-size: 1.2rem;
+    }
+
+    .player-score {
+        font-size: 1.5rem;
+    }
+
+    .player-score::after {
+        font-size: 0.8rem;
+    }
+
+    .ticker-wrap {
+        height: 80px;
+    }
+
+    .ticker-item {
+        font-size: 3rem;
+        padding: 0 1.5rem;
+    }
+
+    .ticker-accent {
+        font-size: 2.5rem;
+        padding: 0.5rem 2rem;
+        height: 50px;
+        min-width: 150px;
     }
 }
 
 @media (max-width: 480px) {
     .periodic-table {
-        grid-template-columns: repeat(6, minmax(40px, 1fr));
+        transform: scale(0.5);
     }
 
-    .element-card {
-        font-size: 0.7em;
+    h1 {
+        font-size: 2rem;
     }
 
-    #game-container {
-        padding: 0.5rem;
+    .instructions li {
+        font-size: 1rem;
+        line-height: 1.4;
     }
 
     .btn {
-        padding: 8px 16px;
-        font-size: 14px;
+        width: 100%;
+        margin: 10px 0;
     }
 }
 
